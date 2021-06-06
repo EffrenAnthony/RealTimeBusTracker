@@ -1,0 +1,113 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+button{
+  border: 3px solid #2FAAE1;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+button:hover{
+  background-color: #2FAAE1;
+  color: white;
+}
+button:active{
+  background-color: #1d7097;
+}
+
+h3{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: white;
+  color: #0b2b3a;
+  padding: 5px;
+}
+p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: white;
+  color: #0b2b3a;
+  padding: 5px;
+  display: inline-block;
+}
+
+.darkmode{
+  display: flex;
+  align-items:center
+}
+.switch {
+  appearance: none;
+  height: 2em;
+  width: 4em;
+  background-color: #c7c7c7;
+  cursor: pointer;
+  border-radius: 1em;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.switch::before {
+  content: "";
+  height: 100%;
+  width: 50%;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+  border: var(--secondary) solid 0.2em;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.switch:checked {
+  background-color: #0d374b;
+}
+
+.switch:checked::before {
+  border-color: #0d374b;
+  transform: translateX(100%);
+}
+
+@media screen and (max-width: 500px) {
+  .switch {
+    outline: none;
+  }
+}
+.mapboxgl-popup-close-button{
+  margin: 0;
+}
+.mapboxgl-popup-content{
+  border-radius: 5px;
+}
+.map-overlay {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+}
+
+.coordinates {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 18px;
+  border-radius: 3px;
+  display: none;
+  }
+
+#searchInput{
+  padding: 20px;
+  font-size: 20px;
+  width: 300px;
+  border-radius: 5px;
+  border: 3px solid #EBF1FA
+}

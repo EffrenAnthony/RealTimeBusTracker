@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Map Animation</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
+    <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="map"></div>
+
+    <pre id="coordinates" class="coordinates"></pre>
+    <div class="map-overlay top">
+      <h3>Search for a place then drag and drop the marker, click on it and add places to your route</h3>
+      <h3>Finally press on "Run my route" to see the animation</h3>
+        <button style="font-size: 2em" onclick="move()">
+            Run my route
+        </button>
+        <input type="text" placeholder="Search a place" id='searchInput'>
+        <button onclick="searchByInput()">Search</button>
+        <div class="darkmode">
+          <p>Switch darkmode</p>
+          <input class="switch" type="checkbox" id="darkmodeSwitch" onchange="toggleDarkmode()"/>
+        </div>
+    </div>
+    <script src="./mapanimation.js"></script>
+</body>
+
+</html>
