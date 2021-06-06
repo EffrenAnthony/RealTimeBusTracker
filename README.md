@@ -12,6 +12,8 @@ Clone this repo in your local environment usin
 git clone https://github.com/EffrenAnthony/RealTimeBusTracker.git
 ```
 
+> Important: Change API keys on the  `mapanimation.js` file for your owns to let others test this project in production. Thank you!
+
 Go to the root of your project and open the `index.html` file in your browser.
 
 ## Roadmap of future improvements:
