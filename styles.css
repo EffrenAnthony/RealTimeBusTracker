@@ -29,13 +29,15 @@ h3{
   background-color: white;
   color: #0b2b3a;
   padding: 5px;
+  display: inline-block;
 }
 p{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: white;
   color: #0b2b3a;
   padding: 5px;
-  display: inline-block;
+  display: inline;
+  width: auto
 }
 
 .darkmode{

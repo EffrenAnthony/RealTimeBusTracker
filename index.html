@@ -25,13 +25,19 @@
       <h3>Finally press on "Run my route" to see the animation</h3>
       <p style="color: rgb(248, 89, 78); display: block;">Search by place will not work in production environment because cors policy of Free API, Try to do it on development mode, Sorry :(</p>
         <button style="font-size: 2em" onclick="move()">
-            Run my route
+            Run my route 🗺️
         </button>
         <input type="text" placeholder="Search a place" id='searchInput'>
         <button onclick="searchByInput()">Search</button>
+        <br>
+        <h3>Press this button to move through near Bus Stops</h3>
+        <button style="font-size: 1em" onclick="moveBus()">
+            Move through Bus Stops 🚌
+        </button>
+        
         <div class="darkmode">
-          <p>Switch darkmode</p>
-          <input class="switch" type="checkbox" id="darkmodeSwitch" onchange="toggleDarkmode()"/>
+            <p>Switch darkmode 🌗</p>
+            <input class="switch" type="checkbox" id="darkmodeSwitch" onchange="toggleDarkmode()"/>
         </div>
     </div>
     <script src="./mapanimation.js"></script>

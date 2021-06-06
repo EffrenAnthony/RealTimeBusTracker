@@ -15,6 +15,7 @@ var coordinates = document.getElementById('coordinates');
 const mapStyles = ['mapbox://styles/mapbox/light-v10', 'mapbox://styles/mapbox/dark-v10']
 let mapCurrentStyle = mapStyles[0]
 const markersObj = {}
+let busStops = []
 let currentLat = 0
 let currentLong = 0
 
@@ -35,6 +36,7 @@ markersObj.mark0 = new mapboxgl.Marker({
 
       .setPopup(new mapboxgl.Popup().setHTML("<button onclick='addNewMarker()'>Add marker</button>"))
       .addTo(map)
+
 
 
 function toggleDarkmode() {
@@ -104,6 +106,38 @@ function move() {
 
 }
 
+let counterBus = 0
+function moveBus() {
+  // const places = Object.values(markersObj)
+  if (counterBus >= busStops.length) {
+    markerElement.setAttribute('src', 'https://img.icons8.com/color/68/000000/place-marker--v2.png')
+    return
+  }
+  
+  // const markerCar = document.createElement('img')
+  map.flyTo({center: [busStops[counterBus].attributes.longitude, busStops[counterBus].attributes.latitude], zoom: 15})
+  markersObj.mark0.setLngLat([busStops[counterBus].attributes.longitude, busStops[counterBus].attributes.latitude])
+  markerElement.setAttribute('src', 'https://img.icons8.com/dusk/64/000000/bus--v1.png')
+  // markersObj.mark0.setHTML(markerCar)
+  var ignitionSound = document.getElementById("ignitionAudio"); 
+  var carRunning = document.getElementById('carRunning')
+  if (counterBus === 0) {
+    ignitionSound.play() 
+  } else {
+    carRunning.play()
+  }
+  setTimeout(() => {
+    
+    
+    markersObj.mark0.setLngLat([busStops[counterBus].attributes.longitude, busStops[counterBus].attributes.latitude])
+    map.flyTo({center: [busStops[counterBus].attributes.longitude, busStops[counterBus].attributes.latitude], zoom: 15})
+    carRunning.load()
+    counterBus++
+    moveBus()
+  }, 3000)
+
+}
+
 function onDragEnd() {
   var lngLat = markersObj.mark0.getLngLat();
   coordinates.style.display = 'block';
@@ -127,6 +161,25 @@ function onDragEnd() {
     map.flyTo({center: [search.data[0].longitude, search.data[0].latitude], zoom: 15});
   }
 
+  (async function getBusLocations(){
+    const url = 'https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip';
+    const response = await fetch(url);
+    const json     = await response.json();
+    console.log(json.data)
+    busStops =  json.data;
+    busStops.forEach((element) => {
+      const markerBusElement = document.createElement('img')
+      markerBusElement.setAttribute('src', 'https://img.icons8.com/emoji/48/000000/bus-stop-emoji.png')
+
+      const newMarker = new mapboxgl.Marker({
+              element: markerBusElement
+            })
+            .setLngLat([element.attributes.longitude, element.attributes.latitude])
+
+            .setPopup(new mapboxgl.Popup().setHTML("<button onclick='addNewMarker()'>Add marker</button>"))
+            .addTo(map)
+    })
+  })()
 if (typeof module !== 'undefined') {
   module.exports = { move };
 }
