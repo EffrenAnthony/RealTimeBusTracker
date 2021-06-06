@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <title>Map Animation</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
     <link href="./styles.css" rel="stylesheet" />
@@ -24,6 +23,7 @@
     <div class="map-overlay top">
       <h3>Search for a place then drag and drop the marker, click on it and add places to your route</h3>
       <h3>Finally press on "Run my route" to see the animation</h3>
+      <p style="color: rgb(248, 89, 78); display: block;">Search by place will not work in production environment because cors policy of Free API, Try to do it on development mode, Sorry :(</p>
         <button style="font-size: 2em" onclick="move()">
             Run my route
         </button>
