@@ -62,7 +62,7 @@ p{
   background-color: white;
   position: absolute;
   border-radius: 50%;
-  border: var(--secondary) solid 0.2em;
+  /* border: #c7c7c7 solid 0.2em; */
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 

@@ -16,6 +16,12 @@ git clone https://github.com/EffrenAnthony/RealTimeBusTracker.git
 
 Go to the root of your project and open the `index.html` file in your browser.
 
+## APIs
+Enter to this URLs to read the official documentation for the APIs used in this project and to get your own APIs keys
+- [https://www.mapbox.com/](https://www.mapbox.com/)
+- [https://positionstack.com/](https://positionstack.com/)
+- [https://new.mta.info/developers](https://new.mta.info/developers)
+
 ## Roadmap of future improvements:
 
 Some of the next functionalities that I would like to implement in this project are:
