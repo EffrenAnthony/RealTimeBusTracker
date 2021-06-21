@@ -2,7 +2,7 @@
 
 ## Description:
 This project show the bustops near by fetching an API from [mbta.com](mbta.com) and show it on the map using [mapbox.com](mapbox.com) API. Also in this project you will see another functionalities like put your own markers into the map, remove them and run an animation to go through each one of them. Finally there is a last funcitonality that allows you to search a place in the map inside an input and move to that point inside the map. 
-> Important: "Search a Place" function is only abailable in development mode running in your local environment
+> Important: "Search a Place" function is only available in development mode running in your local environment
 
 ## How to run:
 
