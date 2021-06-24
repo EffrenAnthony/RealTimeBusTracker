@@ -29,7 +29,7 @@ Enter to this URLs to read the official documentation for the APIs used in this 
 - [https://positionstack.com/](https://positionstack.com/)
 - [https://new.mta.info/developers](https://new.mta.info/developers)
 
-## Roadmap of future improvements:
+## Roadmap of future improvements:
 
 Some of the next functionalities that I would like to implement in this project are:
 
